@@ -38,3 +38,23 @@ exports.obtenerProductoPorCodigo = async (req, res) => {
     res.status(500).json({ message: 'Error al obtener el producto' });
   }
 };
+
+exports.actualizarProducto = async (req, res) => {
+  try {
+    const producto = await Producto.findOneAndUpdate({ codigo: req.params.codigo }, req.body, { new: true });
+    if (!producto) return res.status(404).json({ message: 'Producto no encontrado' });
+    res.json({ message: 'Producto actualizado', producto });
+  } catch (error) {
+    res.status(400).json({ message: 'Error al actualizar' });
+  }
+};
+
+exports.eliminarProducto = async (req, res) => {
+  try {
+    const producto = await Producto.findOneAndDelete({ codigo: req.params.codigo });
+    if (!producto) return res.status(404).json({ message: 'Producto no encontrado' });
+    res.json({ message: 'Producto eliminado' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al eliminar' });
+  }
+};
