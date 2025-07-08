@@ -3,7 +3,7 @@
 
 # **Trabajo Integrador: API REST de Productos 🛍️**
 
-API RESTful desarrollada como proyecto final para el curso de Backend de UNTREF. El objetivo es gestionar un catálogo de productos, permitiendo operaciones de creación, lectura, actualización y eliminación (CRUD), así como búsquedas especializadas.
+API RESTful desarrollada como trabajo integrador para el curso de Backend de UNTREF. El objetivo es gestionar un catálogo de productos, permitiendo operaciones de creación, lectura, actualización y eliminación (CRUD), así como búsquedas especializadas.
 
 ## **Características Principales**
 
