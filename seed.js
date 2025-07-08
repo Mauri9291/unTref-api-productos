@@ -5,14 +5,14 @@ const Producto = require('./models/producto');
 
 connectDB();
 
-// IMPORTANTE: Cambia 'electronica.json' por el archivo que elegiste
-const filePath = path.join(__dirname, 'data', 'electronica.json'); 
+// IMPORTANTE: Cambia 'electronica.json' por tu archivo
+const filePath = path.join(__dirname, 'data', 'electronica.json');
 const productos = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 const importarDatos = async () => {
   try {
-    await Producto.deleteMany(); // Limpia la base de datos
-    await Producto.insertMany(productos); // Inserta los nuevos datos
+    await Producto.deleteMany();
+    await Producto.insertMany(productos);
     console.log('¡Datos importados correctamente!');
     process.exit();
   } catch (error) {
@@ -20,5 +20,4 @@ const importarDatos = async () => {
     process.exit(1);
   }
 };
-
 importarDatos();
