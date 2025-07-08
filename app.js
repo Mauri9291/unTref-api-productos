@@ -3,14 +3,8 @@ const connectDB = require('./config/database');
 const productoRoutes = require('./routes/productoRoutes');
 
 const app = express();
-
-// Conectar a la base de datos
 connectDB();
-
-// Middlewares
-app.use(express.json()); // Para entender los JSON que nos envían
-
-// Rutas
+app.use(express.json());
 app.use('/productos', productoRoutes);
 
 const PORT = process.env.PORT || 3000;
