@@ -119,4 +119,5 @@ Para facilitar las pruebas, este proyecto incluye un archivo `api.http`. Puedes 
 
 Una vez instalada, abre el archivo `api.http` y haz clic en `Send Request` sobre cada petición para probar los endpoints directamente desde el editor.
 
+
 -----
