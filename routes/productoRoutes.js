@@ -4,3 +4,4 @@ const productoController = require('../controllers/productoController');
 
 // Aquí agregaremos las rutas una por una
 module.exports = router;
+router.get('/', productoController.obtenerProductos);
