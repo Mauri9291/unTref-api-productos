@@ -8,3 +8,13 @@ exports.obtenerProductos = async (req, res) => {
     res.status(500).json({ message: 'Error al obtener los productos' });
   }
 };
+
+exports.crearProducto = async (req, res) => {
+  try {
+    const nuevoProducto = new Producto(req.body);
+    await nuevoProducto.save();
+    res.status(201).json({ message: 'Producto creado', producto: nuevoProducto });
+  } catch (error) {
+    res.status(400).json({ message: 'Error al crear el producto' });
+  }
+};
