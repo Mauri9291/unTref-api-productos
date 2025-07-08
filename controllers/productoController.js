@@ -28,3 +28,13 @@ exports.buscarProductos = async (req, res) => {
     res.status(500).json({ message: 'Error en la búsqueda' });
   }
 };
+
+exports.obtenerProductoPorCodigo = async (req, res) => {
+  try {
+    const producto = await Producto.findOne({ codigo: req.params.codigo });
+    if (!producto) return res.status(404).json({ message: 'Producto no encontrado' });
+    res.json(producto);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener el producto' });
+  }
+};

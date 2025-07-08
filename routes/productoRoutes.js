@@ -7,3 +7,4 @@ module.exports = router;
 router.get('/', productoController.obtenerProductos);
 router.post('/', productoController.crearProducto);
 router.get('/buscar', productoController.buscarProductos);
+router.get('/:codigo', productoController.obtenerProductoPorCodigo);
