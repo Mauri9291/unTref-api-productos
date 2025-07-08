@@ -18,3 +18,13 @@ exports.crearProducto = async (req, res) => {
     res.status(400).json({ message: 'Error al crear el producto' });
   }
 };
+
+exports.buscarProductos = async (req, res) => {
+  try {
+    const termino = req.query.q;
+    const productos = await Producto.find({ nombre: { $regex: termino, $options: 'i' } });
+    res.json(productos);
+  } catch (error) {
+    res.status(500).json({ message: 'Error en la búsqueda' });
+  }
+};
