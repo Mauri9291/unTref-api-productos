@@ -6,12 +6,12 @@ const productoController = require('../controllers/productoController');
 router.post('/', productoController.crearProducto);
 router.get('/', productoController.obtenerProductos);
 
-// --- Rutas Específicas (¡IMPORTANTE: van ANTES que las dinámicas!) ---
+// --- Rutas Específicas ---
 router.get('/buscar', productoController.buscarProductos);
 router.get('/categoria/:nombre', productoController.obtenerProductosPorCategoria);
 router.get('/precio/:min-:max', productoController.obtenerProductosPorRangoDePrecio);
 
-// --- Rutas Dinámicas por Código (van DESPUÉS de las específicas) ---
+// --- Rutas Dinámicas por Código ---
 router.get('/:codigo', productoController.obtenerProductoPorCodigo);
 router.put('/:codigo', productoController.actualizarProducto);
 router.delete('/:codigo', productoController.eliminarProducto);
