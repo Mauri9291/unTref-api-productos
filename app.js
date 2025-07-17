@@ -8,7 +8,7 @@ const app = express();
 connectDB();
 
 // Middlewares
-app.use(express.json()); // Para entender los JSON que nos envían
+app.use(express.json());
 
 // Rutas
 app.use('/productos', productoRoutes);
